@@ -1,0 +1,23 @@
+# FRAMEWORK DE BENCHMARKING DE EXPERIÊNCIA E SERVIÇO (CROSS-INDUSTRY)
+
+## 1. O Conceito de "Service Excellence" (Fora do Imobiliário)
+Para liderar no mercado imobiliário de luxo, não olhe para outras imobiliárias. Olhe para onde seu cliente gasta dinheiro com prazer.
+- **Hotelaria 5 Estrelas (Ritz-Carlton, Four Seasons):** Antecipação de necessidades. O cliente não pede água; a água aparece.
+- **Automotivo de Luxo (Porsche, Ferrari):** A entrega técnica é um evento. O pós-venda é um clube de membros.
+- **Private Banking (Wealth Management):** Confiança absoluta, discrição e consultoria patrimonial de longo prazo.
+
+## 2. Parâmetros de Análise de Concorrência (Direta e Indireta)
+Ao analisar um concorrente ou player de referência, extraia:
+- **A Jornada Digital:** Quantos cliques até falar com um humano? O site carrega em < 2s? A fotografia é documental ou artística?
+- **O "Touchpoint" Humano:** O atendimento é roteirizado ou consultivo? Eles vendem "preço" ou "valor"?
+- **O Ecossistema:** Eles vendem apenas o lote ou oferecem o projeto arquitetônico + construtora parceira (Solução Turn-key)?
+
+## 3. Lista de Verificação de Boas Práticas (ETL de Qualidade)
+- **Dados Estruturados:** O concorrente apresenta tabelas de preço claras ou esconde o jogo? (Transparência gera confiança no alto padrão).
+- **Conteúdo Educativo:** Eles produzem relatórios de mercado? (Autoridade).
+- **Prova Social Curada:** Os depoimentos são de "fakes" ou de líderes da indústria local?
+
+## 4. Inovação em Processos (O que copiar?)
+- **Concierge:** Alguém que resolve a burocracia do cartório para o cliente.
+- **Test-Drive:** Permitir que o cliente passe um dia no condomínio (no clube) antes de comprar.
+- **Tokenização:** Estão usando blockchain para segurança documental?

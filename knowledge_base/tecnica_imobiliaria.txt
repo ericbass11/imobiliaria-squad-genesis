@@ -1,0 +1,28 @@
+# ANÁLISE TÉCNICA E DE INVESTIMENTO IMOBILIÁRIO
+
+## 1. Indicadores Financeiros (KPIs)
+- **Cap Rate (Capitalization Rate):** (Receita Anual de Aluguel / Valor do Imóvel) x 100.
+  - *Benchmark:* Imóveis residenciais de luxo costumam ter Cap Rate menor (3-5% a.a.) mas maior potencial de valorização.
+- **Preço/m²:** Comparar sempre com o "Comp Set" (imóveis comparáveis no mesmo raio de 500m).
+- **Payback:** Tempo de retorno do investimento.
+- **Vacância Física vs. Financeira:** Analisar quanto tempo imóveis similares ficam vagos na região.
+
+## 2. Checklist de Avaliação de Alto Padrão (O que define o Luxo?)
+- **Localização:** "Golden Mile". Lado da sombra? Vista perpétua (não pode ser obstruída)? Rua plana ou ladeira?
+- **Pé-direito:** Alto padrão exige no mínimo 2,80m livre. O ideal é acima de 3,00m ou Duplo (5,50m+).
+- **Acústica:** Lajes com manta acústica, janelas com vidro duplo ou triplo.
+- **Vagas de Garagem:** Largas, livres (sem "tranca-tranca") e com ponto para carro elétrico.
+- **Planta:** Flexibilidade (poucos pilares e vigas aparentes), hall privativo, circulação íntima separada da social.
+
+## 3. Termos Técnicos Obrigatórios
+- **Permuta:** Troca de imóveis como parte do pagamento.
+- **Due Diligence:** Análise prévia de riscos jurídicos e documentais.
+- **Retrofit:** Modernização de imóveis antigos (muito valorizado em bairros nobres clássicos).
+- **Zoneamento:** Verificar o plano diretor da cidade (o que pode ser construído ao lado? Vai tapar a vista?).
+
+## 4. Análise de Concorrência
+- Ao analisar concorrentes, verifique:
+  - Eles têm decorado no local?
+  - Qual a política de descontos?
+  - Quem é o público-alvo (Investidor, Família, Expat)?
+  - Qual o estoque atual (Overupply na região)?

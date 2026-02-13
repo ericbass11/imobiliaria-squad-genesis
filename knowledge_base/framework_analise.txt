@@ -1,0 +1,22 @@
+# FRAMEWORK DE ANÁLISE DE INVESTIMENTO IMOBILIÁRIO (MODELO PRIMO RICO / PAI RICO)
+
+1. A REGRA DO 1% (ALUGUEL)
+   - Um bom imóvel para renda deve gerar, no mínimo, 0.5% a 1% do seu valor em aluguel mensal.
+   - Abaixo de 0.4%, é um passivo disfarçado de ativo.
+   
+2. CASH ON CASH RETURN (CoC)
+   - Se financiar, o fluxo de caixa (Aluguel - Parcela - Despesas) deve ser positivo.
+   - Nunca compre um imóvel que tira dinheiro do seu bolso todo mês esperando valorização futura ("Hope Strategy").
+
+3. POTENCIAL DE VALORIZAÇÃO (GENTRIFICAÇÃO)
+   - Procure "bairros vizinhos" aos bairros nobres que estão começando a receber cafeterias, academias e novos empreendimentos.
+   - Compre o "pior imóvel da melhor rua".
+
+4. O CUSTO DE OPORTUNIDADE (SELIC)
+   - Se a Selic está alta (>10%), o imóvel deve oferecer um prêmio de risco.
+   - O Cap Rate (Renda Anual / Valor do Imóvel) deve ser comparável ou superior a Títulos IPCA+ de longo prazo, somando a valorização esperada.
+
+5. A LEI DA ESCASSEZ (LOTES)
+   - "Deus parou de fazer terra."
+   - Lotes em condomínios fechados consolidados são Reserva de Valor suprema.
+   - Verifique a taxa de ocupação do condomínio: < 20% (Risco alto, Longo prazo), > 80% (Preço cheio, Liquidez alta).

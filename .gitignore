@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Local data \u0026 Reports
+.tmp/
+reports/
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store

@@ -8,7 +8,7 @@ __pycache__/
 
 # Local data \u0026 Reports
 .tmp/
-# reports/
+reports/
 
 # VS Code
 .vscode/

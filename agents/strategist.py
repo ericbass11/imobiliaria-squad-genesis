@@ -7,7 +7,7 @@ class StrategistAgent:
     def __init__(self):
         self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-    def run(self, city):
+    def run(self, city, persona_name=None):
         print("Strategist Agent initiated...")
         
         # 0. Load Knowledge Base (Advanced Frameworks)
@@ -27,6 +27,33 @@ class StrategistAgent:
             fw_tech = "Use dados técnicos."
             fw_bench = "Analise concorrentes."
 
+        # 0.1 Load Persona (Clone)
+        selected_mindset = ""
+        # Default System Persona
+        system_role = "Você é um Consultor Estratégico Sênior. Frieza, Dados e Visão de Longo Prazo."
+        
+        if persona_name:
+            try:
+                filename = f"knowledge_base/clones/{persona_name}.txt"
+                with open(filename, "r", encoding="utf-8") as f:
+                    selected_mindset = f.read()
+                
+                # Override System Role with Clone Identity
+                system_role = f"""
+                ATENÇÃO MÁXIMA: VOCÊ ESTÁ EM MODO "CLONE".
+                
+                SUA IDENTIDADE:
+                {selected_mindset}
+                
+                INSTRUÇÃO: Reescreva todas as suas respostas, análises e estilo de escrita
+                para incorporar PROFUNDAMENTE esta persona. Use o vocabulário, mentalidade e 
+                estilo de formatação definidos acima.
+                """
+                print(f">>> CLONE ACTIVATED: {persona_name.upper().replace('_', ' ')} <<<")
+                
+            except FileNotFoundError:
+                print(f"Warning: Persona file '{persona_name}' not found. Using Standard Consultant.")
+
         try:
             # 1. Read intel
             with open(".tmp/market_intel.json", "r", encoding="utf-8") as f:
@@ -35,17 +62,18 @@ class StrategistAgent:
             with open(".tmp/financial_context.json", "r", encoding="utf-8") as f:
                 financial_context = f.read()
             
-            # 2. Synthesize with LLM (Strategic Advisor Mode)
+            # 2. Synthesize with LLM
             print("Synthesizing Strategic Dossier with LLM...")
+            
+            # Prompt Definitivo (V2.1 - Deep Persona & Anti-Adjetivos)
             prompt = f"""
-            ATENÇÃO: Você é um ESTRATEGISTA SÊNIOR DE MERCADO IMOBILIÁRIO (Consultoria 'Big 4' - McKinsey/BCG).
+            ATENÇÃO: VOCÊ NÃO É UMA IA PADRÃO.
+            VOCÊ É O CLONE MENTAL DE UM ESPECIALISTA.
             
-            Sua mente é moldada por estas 4 Bíblias do Mercado:
-            1. VENDAS (Psicologia): {fw_sales}
-            2. MARKETING (Posicionamento): {fw_marketing}
-            3. TÉCNICA (Fundamentos): {fw_tech}
-            4. BENCHMARKING (Service Excellence): {fw_bench}
-            
+            --- SUA IDENTIDADE E REGRAS DE PENSAMENTO (O CLONE) ---
+            {selected_mindset}
+            -------------------------------------------------------
+
             DADOS DE ENTRADA (ETL PROCESSADO):
             >>> INTELIGÊNCIA DE MERCADO (Players & Produtos):
             {market_intel}
@@ -53,37 +81,48 @@ class StrategistAgent:
             >>> CONTEXTO MACRO-FINANCEIRO (Economia Real):
             {financial_context}
             
-            TAREFA FINAL: Escreva um RELATÓRIO DE INTELIGÊNCIA DE MERCADO (Dossiê Completo) para {city}.
-            O objetivo NÃO é vender um lote agora. O objetivo é dar CLAREZA ABSOLUTA para a tomada de decisão da diretoria.
-            A venda será uma consequência natural dessa análise bem feita.
-
+            BÍBLIAS DO MERCADO (FRAMEWORKS DE APOIO):
+            1. VENDAS: {fw_sales}
+            2. MARKETING: {fw_marketing}
+            3. TÉCNICA: {fw_tech}
+            4. BENCHMARKING: {fw_bench}
+            
+            TAREFA FINAL: Escreva um Dossiê Estratégico sobre {city}, sob a ótica da sua PERSONALIDADE (CLONE).
+            
+            REGRAS OBRIGATÓRIAS DE EXECUÇÃO:
+            1. **Encarnação Total:** Não quebre o personagem. Use estritamente o tom de voz, filosofia e gatilhos definidos na sua Identidade (acima).
+            2. **REGRA DE OURO (ANTI-ADJETIVOS):** É ESTRITAMENTE PROIBIDO usar adjetivos vazios como "incrível", "exclusivíssimo", "maravilhoso", "top", "irrepreensível".
+               - Para cada elogio, você DEVE fornecer um DADO TÉCNICO ou FATO que prove a afirmação.
+               - ERRADO: "Acabamento de alto padrão."
+               - CERTO: "Piso em Mármore Travertino Romano em toda a área social e pé-direito livre de 3 metros."
+            
             Estrutura Obrigatória do Relatório (Markdown Profissional):
             
             # Dossiê Estratégico: Análise de Mercado de Alto Padrão em {city}
+            (Subtítulo: Uma análise por [Nome do Clone/Consultor])
             
-            ## 1. Executive Summary (O Veredito do Consultor)
-            *   Resumo em 3 parágrafos: Oportunidade, Risco e Recomendação Final (Go/No-Go).
+            ## 1. Executive Summary (O Veredito)
+            * Resumo na voz do clone (Use a filosofia do clone aqui).
             
-            ## 2. Análise Profunda da Concorrência (Benchmarking)
-            *   Mapeamento dos Players: Quem domina? Quem é irrelevante?
-            *   Análise de Produto: Preço/m², Ticket Médio, Diferenciais Técnicos (use o framework técnico).
-            *   **Best Practices (Visto em Players de Outros Setores):** O que podemos aprender com a Hotelaria/Automotivo de Luxo (citado no Framework de Benchmarking) para aplicar aqui?
+            ## 2. Análise da Concorrência (Benchmarking)
+            * Quem são os players?
+            * Análise de Produto e Preço (Use números, não adjetivos).
+            * **Best Practices:** (Aplique os frameworks de apoio aqui).
             
-            ## 3. Análise Econômica Aplicada
-            *   Correlação Selic x Cap Rate na região.
-            *   Custo de Oportunidade para o cliente: Por que comprar terra agora e não deixar no CDI? (Use argumentos matemáticos).
-            *   Cenário de Inflação de Construção (CUB).
+            ## 3. Análise Econômica (A Lógica do Dinheiro)
+            * Custo de Oportunidade e Cap Rate.
+            * Inflação de Construção vs Valorização do Lote.
             
-            ## 4. O Plano Mestre (Estratégia Baseada em Dados)
-            *   **Produto Ideal:** Defina o produto perfeito para este mercado (Metragem, Lazer, Faixa de Preço) baseado nas lacunas dos concorrentes.
-            *   **Posicionamento (Quiet Luxury):** Como nos diferenciar do "ruído" do marketing popular?
-            *   **Estratégia Comercial:** Sugira 3 ações táticas para atingir o público UHNWI (Ex: Eventos fechados, Parcerias com Private Bank).
+            ## 4. O Plano Mestre (A Estratégia do Clone)
+            * **Produto Ideal:** Defina o produto perfeito (Metragem, Lazer, Diferenciais).
+            * **Posicionamento:** Como vender isso? (Use os gatilhos mentais do clone).
+            * **Ações Táticas:** 3 ações concretas e imediatas.
             """
             
             response = self.client.chat.completions.create(
                 model="gpt-4o",
                 messages=[
-                    {"role": "system", "content": "Você é um Consultor Estratégico Sênior. Frieza, Dados e Visão de Longo Prazo."},
+                    {"role": "system", "content": system_role},
                     {"role": "user", "content": prompt}
                 ]
             )
@@ -94,7 +133,10 @@ class StrategistAgent:
             # Sanitize city name for filename
             safe_city = city.replace("/", "-").replace("\\", "-").strip()
             timestamp = datetime.datetime.now().strftime("%Y-%m-%d")
-            filename = f"reports/Dossier_{safe_city}_{timestamp}.md"
+            
+            # Include persona in filename
+            suffix = f"_{persona_name}" if persona_name else "_Standard"
+            filename = f"reports/Dossier_{safe_city}{suffix}_{timestamp}.md"
             
             with open(filename, "w", encoding="utf-8") as f:
                 f.write(content)

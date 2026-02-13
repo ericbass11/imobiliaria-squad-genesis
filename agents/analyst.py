@@ -1,5 +1,6 @@
 import json
 import os
+import datetime
 from openai import OpenAI
 from tools.central_bank import get_real_time_rates
 
@@ -75,11 +76,23 @@ class AnalystAgent:
                 response_format={"type": "json_object"}
             )
             
-            content = response.choices[0].message.content
+            # Parse LLM content
+            llm_content = json.loads(response.choices[0].message.content)
             
-            # Save to .tmp
+            # --- CREATE DATA PACKAGE WITH METADATA (AUDIT LOG) ---
+            final_package = {
+                "metadata": {
+                    "captured_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "agent": "AnalystAgent",
+                    "data_source": "Banco Central do Brasil (API)",
+                    "status": "success"
+                },
+                "data": llm_content
+            }
+            
+            # Save to .tmp with indentation
             with open(".tmp/financial_context.json", "w", encoding="utf-8") as f:
-                f.write(content)
+                json.dump(final_package, f, ensure_ascii=False, indent=4)
                 
             return True
             
